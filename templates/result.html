@@ -1,0 +1,63 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis Result</title>
+</head>
+
+<script>
+    // Example using jQuery
+    $(document).ready(function() {
+      $("#diagnoseForm").submit(function(e) {
+        e.preventDefault();
+  
+        var formData = {
+          'disease': $('#diseaseInput').val(),
+          'days': $('#daysInput').val()
+        };
+  
+        $.ajax({
+          type: 'POST',
+          url: '/diagnose',
+          contentType: 'application/json;charset=UTF-8',
+          data: JSON.stringify(formData),
+          success: function(result) {
+            // Handle the result, for example, redirect to the result page
+            window.location.href = '/result';
+          },
+          error: function(error) {
+            // Handle errors
+            console.log(error);
+          }
+        });
+      });
+    });
+  </script>
+  
+
+  
+<body>
+    <h1>Diagnosis Result</h1>
+
+    <p><strong>Disease:</strong> {{ result.disease }}</p>
+    <p><strong>Description:</strong> {{ result.description }}</p>
+    <p><strong>Precautions:</strong> {{ result.precautions|join(', ') }}</p>
+    <p><strong>Result:</strong> {{ result.result }}</p>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare ChatBot Result</title>
+</head>
+<body>
+    <h1>ChatBot Result</h1>
+    <p>{{ result }}</p>
+</body>
+</html>
+
